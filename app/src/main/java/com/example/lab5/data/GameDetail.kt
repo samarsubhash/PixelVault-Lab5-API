@@ -1,0 +1,37 @@
+package com.example.lab5.data
+
+import com.google.gson.annotations.SerializedName
+
+/**
+ * Data class for the /game?id= detail endpoint.
+ */
+data class GameDetail(
+    @SerializedName("id") val id: Int,
+    @SerializedName("title") val title: String,
+    @SerializedName("thumbnail") val thumbnail: String,
+    @SerializedName("status") val status: String?,
+    @SerializedName("short_description") val shortDescription: String,
+    @SerializedName("description") val description: String,
+    @SerializedName("game_url") val gameUrl: String,
+    @SerializedName("genre") val genre: String,
+    @SerializedName("platform") val platform: String,
+    @SerializedName("publisher") val publisher: String,
+    @SerializedName("developer") val developer: String,
+    @SerializedName("release_date") val releaseDate: String,
+    @SerializedName("freetogame_profile_url") val profileUrl: String,
+    @SerializedName("minimum_system_requirements") val minimumSystemRequirements: SystemRequirements?,
+    @SerializedName("screenshots") val screenshots: List<Screenshot>?
+)
+
+data class SystemRequirements(
+    @SerializedName("os") val os: String?,
+    @SerializedName("processor") val processor: String?,
+    @SerializedName("memory") val memory: String?,
+    @SerializedName("graphics") val graphics: String?,
+    @SerializedName("storage") val storage: String?
+)
+
+data class Screenshot(
+    @SerializedName("id") val id: Int,
+    @SerializedName("image") val image: String
+)
